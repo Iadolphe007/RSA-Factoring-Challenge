@@ -3,17 +3,17 @@ import math
 import sys
 
 def find_factors(number):
-    largest_factpr = none
+    largest_factor = none
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
             factor_pair = (i, n // i)
-            if largest_factor_pair is None or factor_pair[1] > largest_factor_pair[1]:
-                largest_factor_pair = factor_pair
+            if largest_factor is None or factor_pair[1] > largest_factor[1]:
+                largest_factor = factor_pair
     return largest_factor_pair
 
 def factorise_number(file_name):
     results = {}
     for num in numbers:
-        largest_factor_pair = factorize_number(num)
-        results[num] = largest_factor_pair
+        largest_factor = find_factors(num)
+        results[num] = largest_factor
         return results
