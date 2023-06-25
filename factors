@@ -14,3 +14,5 @@ def factorize_numbers(numbers):
         largest_factor_pair = factorize_number(num)
         results[num] = largest_factor_pair
     return results
+for num, pair in factorization_results.items():
+    print(f"Largest factor pair of {num}: {pair}")
