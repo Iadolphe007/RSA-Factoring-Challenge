@@ -1,41 +1,29 @@
+#!/usr/bin/python3
+"""
+Factorize numbers in a file into a product of two prime numbers
+"""
 import sys
-import math
 
-def is_prime(number):
-    if number < 2:
-        return False
-    for i in range(2, int(math.sqrt(number)) + 1):
-        if number % i == 0:
-            return False
-    return True
 
-def factorize_rsa_number(n):
-    factors = []
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0 and is prime(i) and is_prime(n // i):
-             factors.append((i, n // i))
-        return factors
-
-def factorize_rsa_numbers_from_file(file_name):
+def factorize_num():
+    """
+    Function look for file and factorize numbers into two prime numbers
+    """
     try:
-        with open(file_name, 'r') as file:
-            number = int(file.readline().strip())
-            factorizations = factorize_rsa_number(number)
-            for p, q in factorizations:
-                print(f"n = {p} * {q}")
-    except FileNotFoundError:
-        print("File not found.")
-    except ValueError:
-        print("Invalid number in the file.")
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-    
-
-    if __name__ == "__main__":
-        if len(sys.argv) < 2:
-            print("Usage: rsa_factors <file>")
-        else:
-            file_name = sys.argv[1]
-            factorize_rsa_numbers_from_file(file_name)
-
-
+        file = sys.argv[1]
+        with open(file) as f:
+            for line in f:
+                line = int(line)
+                if line % 2 == 0:
+                    print("{}={}*{}".format(line, line // 2, 2))
+                    continue
+                i = 3
+                while i < line // 2:
+                    if line % i == 0:
+                        print("{}={}*{}".format(line, line // i, i))
+                        break
+                    i = i + 2
+                if i == (line // 2) + 1:
+                    print("{}={}*{}".format(line, line, 1))
+    except (IndexError):
+        pass

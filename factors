@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+
+"""factorize given set of numbers in a file to product of two small numbers"""
+
 import sys
+
 def factorize_number(n):
-    """"find two small numbers that multiply to give a given number"""
-    i =2
+
+    """"
+    find two small numbers that multiply to give a given number
+    """
+    i = 2
     if n < 2:
         return
     while n % i:
@@ -19,5 +26,5 @@ def factorize_number(n):
                 n = int(line.split('\n')[0])
                 factorize_number(n)
                 line = file.readline()
-    except:
+    except Exception:
         pass
