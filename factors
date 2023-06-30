@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 
 """factorize given set of numbers in a file to product of two small numbers"""
 
+=======
+"""factorize given set of numbers in a file to product of two small numbers"""
+>>>>>>> b9e522046ef8943c2e246a61bf77945213f90282
 import sys
 
 def factorize_number(n):
