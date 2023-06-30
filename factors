@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""factorize given set of numbers in a file to product of two small numbers"""
 import sys
 def factorize_number(n):
     """"find two small numbers that multiply to give a given number"""
